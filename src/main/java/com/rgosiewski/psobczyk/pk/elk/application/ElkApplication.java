@@ -1,4 +1,4 @@
-package com.rgosiewski.psobczyk.pk.elk;
+package com.rgosiewski.psobczyk.pk.elk.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
