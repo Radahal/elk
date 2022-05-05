@@ -1,20 +1,19 @@
 package com.rgosiewski.psobczyk.pk.elk.logging.controller;
 
 import com.rgosiewski.psobczyk.pk.elk.logging.service.LoggingService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("logs")
+@RequestMapping("/logs")
 public class LoggingController {
-    private final LoggingService loggingService;
 
-    public LoggingController(LoggingService loggingService) {
-        this.loggingService = loggingService;
-    }
+    @Autowired
+    private LoggingService loggingService;
 
-    @PostMapping("/generate")
+    @GetMapping("/generate")
+    @ResponseStatus(HttpStatus.OK)
     public void generateLogs() {
         loggingService.generateLogs();
     }
